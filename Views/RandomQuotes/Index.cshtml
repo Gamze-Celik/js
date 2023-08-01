@@ -1,0 +1,52 @@
+﻿@model UygulamaHavuzum.Models.RandomQuotes
+@{
+	ViewData["Title"] = "RandomQuotes";
+}
+
+<div class="form">
+    <h2> Random Quote Generator</h2>
+
+    <div class="quotes">
+
+        <div class="quote-box">
+            <p class="quote">Be the change that you wish to see in the world.</p>
+        </div>
+        <div class="author">
+            <span>~</span>
+            <span class="name">Ghandi</span>
+        </div>
+    </div>
+
+    <div class="row buttons">
+        <div class="col mt-2">
+            <div class="features">
+
+                <div class="quote-box">
+                <div id="quotes"></div>
+                    <button class="btn button " id="new-quote">New Quote</button>
+                    <button class="btn">
+                        <a id="tweet-me" class="twitter-share-button"
+                           href="https://twitter.com/intent/tweet?text=What’s%20happening?"
+                           data-size="large">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @section Css{
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <link href="~/css/random.css" rel="stylesheet" />
+    }
+
+    @section Scripts{
+        <script src="~/js/random.js"></script>
+        <script src="https://kit.fontawesome.com/8d6ffd1a84.js" crossorigin="anonymous"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+    }
+</div>
+

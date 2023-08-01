@@ -1,0 +1,90 @@
+﻿@model UygulamaHavuzum.Models.BMICalculatorModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["title"] = "Bmi Calculator";
+}
+     <body>
+            <div class="container d-flex justify-content-center" id="bmicalc">
+                    <div class="wrapper">
+                    <h3 class="card-title text-center">BMI Calculator</h3>
+                    <div class="d-inline-block">
+            <div class="bmi">
+               <form method="post" data-ajax="true" data-ajax-success="myf" asp-action="Index" asp-controller="Calculator">
+                  
+
+                    <div class="inputH inputBox">
+                        <input placeholder="Height (cm)" type="number" id="inputH" required>
+                    </div>
+
+                    <div class="inputW inputBox">
+                        <input placeholder="Weight (kg)" type="number" id="inputW" required>
+                    </div>
+
+                    <div class="d-flex justify-content-start">
+                    <button type="submit" class="btn-success calculate" id="submit" value="submit">Calculate</button>
+
+                    <button href="#" class="btn-danger reset" onclick="ResetPage()" id="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col mt-5">
+            <div class="res">
+                <form>
+                    <p>BMI Result</p>
+                    <h3 id="bmi-output">-</h3>
+                   
+                    <p>Your BMI</p>
+                    <h3 id="bmi-status">-</h3>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <link href="~/css/hesap.css" rel="stylesheet" asp-append-version="true" />
+</body>
+
+@section Scripts
+{
+    <script>
+
+        document.getElementById('bmicalc').addEventListener("submit", (e) => {
+            e.preventDefault();
+            var hght = document.getElementById("inputH").value;
+            var wght = document.getElementById("inputW").value;
+
+            $.ajax(
+                {
+                    url: '@Url.Action("Index","Calculator")',
+                    type: "POST",
+                    data:
+                    {
+                        Height: parseFloat(hght), Weight: parseFloat(wght)
+                    },
+                    success: function (data) {
+                        var data2 = JSON.parse(data);
+                        document.getElementById("bmi-output").textContent = data2.BMIResult;
+                        document.getElementById("bmi-status").textContent = data2.YourBMI;
+                    },
+                    error: function (err) {
+                        alert(err.statusText + " " + err.url)
+                    }
+                });
+        });
+    </script>
+
+    <script>
+        function ResetPage() {
+            document.getElementById("inputH").value = "";
+            document.getElementById("inputW").value = "";
+            document.getElementById("bmi-output").innerHTML = "-";
+            document.getElementById("bmi-status").innerHTML = "-";
+        }
+    </script>
+}
+
+
+

@@ -1,0 +1,55 @@
+﻿
+@model List<UygulamaHavuzum.Models.UygulamaHavuzu>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["title"] = "Uygulama Havuzu";
+}
+
+<header>
+    <div class="container text-center">
+
+        <div class="logo">
+            <h1><b>SBB Yazılım Park-App Container</b></h1>
+        </div>
+
+
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+
+        <div class="row">
+
+            @foreach (var uygulama in Model)
+            {
+                <div class="col-md-4">
+
+
+                    <a href=@uygulama.ApplicationController>
+                        <div class="uygulama-card">
+
+
+                            <img src=@uygulama.Image class="img img-responsive" />
+                            <div class="uygulama-name">@uygulama.ApplicationName</div>
+
+
+
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+        
+  
+@section Css{
+    <link href="/css/app.css" rel="stylesheet" />
+}
+
+      
+
+    
+

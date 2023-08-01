@@ -1,0 +1,103 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    background: url("https://digitshack.com/codepen/bmical/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h1 {
+
+    padding: 30px 0px 30px 0px;
+    border-radius: 18px;
+}
+.bmi {
+    background: #2892eb;
+    position: relative;
+    padding: 80px 50px 38px;
+    box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bmi form h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    line-height: 0.9em;
+}
+
+.inputBox {
+    position: relative;
+    display: flex;
+}
+span {
+    color: red;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    width: 50%;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button {
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    background: black;
+    display: block;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+.size {
+    min-height: 125px;
+    min-width: 190px;
+}
+.calculate {
+    border: 1px solid white;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    margin-bottom: 20px;
+    transition: .3s ease;
+}
+.reset {
+    border: 1px solid white;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    margin-bottom: 20px;
+    transition: .3s ease;
+}
